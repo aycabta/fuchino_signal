@@ -1,5 +1,5 @@
-Yamanoi Signal
+Fuchino Signal
 ==============
 
-This Is The Alpinism Feed.
+This Is The Mathematical Feed.
 
