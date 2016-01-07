@@ -13,7 +13,17 @@ get '/' do
       maker.channel.link = 'http://www.evernew.co.jp/outdoor/yamanoi/'
       maker.channel.about = 'http://yamanoi-signal.heroku.com/'
       maker.channel.title = '伯母野山日記 Obanoyama-Tagebuch'
-      maker.channel.description = '※ この page の内容（html file のコードを含む）の GNU Free Documentation License に準拠した引用／利用は歓迎しますが， 盗作／データ改竄やそれに類する行為には 天罰が下ります． 絶対にやめてください． ただし，ここで書いたことの一部は， 後で，本や雑誌記事などとして発表する作文の素材として再利用する可能性もあります． その際，再利用されたテキストに関しては， 諸事情から GNU Free Documentation License に準拠した扱いができなくなることもありますので， その場合にはご諒承ください．'
+      maker.channel.description = <<EOF
+※ この page の内容（html file のコードを含む）の 
+GNU Free Documentation License
+に準拠した引用／利用は歓迎しますが，
+盗作／データ改竄やそれに類する行為には天罰が下ります． 絶対にやめてください．
+ただし，ここで書いたことの一部は，
+後で，本や雑誌記事などとして発表する作文の素材として再利用する可能性もあります．
+その際，再利用されたテキストに関しては，
+諸事情から GNU Free Documentation License に準拠した扱いができなくなることもありますので，
+その場合にはご諒承ください．
+EOF
       agent.page.parser.xpath('//a[@name]').each do |start_of_entry|
         next if start_of_entry.attributes['name'].to_s == 'first'
         item = maker.items.new_item
