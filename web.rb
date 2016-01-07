@@ -1,10 +1,10 @@
 require 'bundler'
-#require 'sinatra'
+require 'sinatra'
 require 'mechanize'
 require 'rss'
 require 'time'
 
-#get '/' do
+get '/' do
   url = 'http://fuchino.ddo.jp/obanoyama.html'
   agent = Mechanize.new
   if agent.get(url).code == '200'
@@ -55,5 +55,5 @@ require 'time'
   else
     '?'
   end
-#end
+end
 
