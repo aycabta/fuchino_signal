@@ -1,6 +1,7 @@
 require 'bundler'
 require 'sinatra'
 require 'mechanize'
+require 'erb'
 require 'rss'
 require 'time'
 
@@ -269,7 +270,7 @@ EOF
         end
         item = maker.items.new_item
         item.title = title
-        item.link = "http://fuchino.ddo.jp/obanoyama.html#{link}"
+        item.link = "http://fuchino.ddo.jp/obanoyama.html##{ERB::Util.url_encode(link)}"
         item.date = Time.new(year, month, day, hour, minute, 0, offset)
       end
       maker.items.do_sort = true
