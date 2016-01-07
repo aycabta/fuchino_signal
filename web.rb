@@ -51,13 +51,6 @@ EOF
             end
           end
         end while header = header.next_sibling
-=begin
-        title_link = entry.at('div.title h2 a')
-        item.title = title_link.text
-        item.link = title_link.attributes['href']
-        item.date = Time.parse(entry.at('div.title span.byline abbr').attributes['title'])
-        item.description = entry.at('div.title').next_sibling.text.to_s.gsub(/^\n*(.+)\n*$/m, '\1')
-=end
       end
       maker.items.do_sort = true
     end
